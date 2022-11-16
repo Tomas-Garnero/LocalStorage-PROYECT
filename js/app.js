@@ -37,9 +37,12 @@ function agregarTweets(e) {
         id: Date.now,
         tweet
     }
-
-    tweets = [...tweets, tweetObj];
     
+    tweets = [...tweets, tweetObj];
+
+    console.log(tweets)
+
+
     // Una vez agregado creamos el HTML
     crearHTML();
 
