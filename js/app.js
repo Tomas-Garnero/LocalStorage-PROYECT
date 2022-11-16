@@ -34,7 +34,7 @@ function agregarTweets(e) {
 
     // Añadir al arreglo de tweets
     const tweetObj = {
-        id: Date.now,
+        id: generateUUID(),
         tweet
     }
     
@@ -115,4 +115,15 @@ function limpiarHTML() {
     while(listaTweets.firstChild) {
         listaTweets.removeChild(listaTweets.firstChild);
     }
+}
+
+// Generar id unicos
+function generateUUID() {
+    var d = new Date().getTime();
+    var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        var r = (d + Math.random() * 16) % 16 | 0;
+        d = Math.floor(d / 16);
+        return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+    });
+    return uuid;
 }
